@@ -1,7 +1,7 @@
 <template>
   <div class="app-wrapper">
-    <Buttons @increment="addOne" @decrement="subtractOne" />
-    <CountDisplay :count="count" />
+    <Buttons />
+    <CountDisplay />
   </div>
 </template>
 
@@ -12,17 +12,6 @@ import CountDisplay from "./components/CountDisplay.vue";
 export default {
   name: "App",
   components: { Buttons, CountDisplay },
-  data() {
-    return { count: 0 };
-  },
-  methods: {
-    addOne() {
-      this.count++;
-    },
-    subtractOne() {
-      this.count--;
-    },
-  },
 };
 </script>
 

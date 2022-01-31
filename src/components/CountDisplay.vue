@@ -2,8 +2,12 @@
   <h3>{{ count }}</h3>
 </template>
 <script>
+import { mapState } from 'pinia';
+import useCountStore from "../store/count";
 export default {
   name: "CountDisplay",
-  props: ["count"],
+  computed: {
+    ...mapState(useCountStore, ["count"])
+  }
 };
 </script>

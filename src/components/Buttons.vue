@@ -1,20 +1,17 @@
 <template>
   <div>
-    <button @click="increment">increment</button>
-    <button @click="decrement">decrement</button>
+    <button @click="addOne">increment</button>
+    <button @click="subtractOne">decrement</button>
   </div>
 </template>
 
 <script>
+import { mapActions } from 'pinia';
+import useCountStore from "../store/count";
 export default {
   name: "Buttons",
   methods: {
-    increment() {
-      this.$emit("increment");
-    },
-    decrement() {
-      this.$emit("decrement");
-    },
+    ...mapActions(useCountStore, ["addOne", "subtractOne"])
   },
 };
 </script>
